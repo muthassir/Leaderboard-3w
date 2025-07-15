@@ -6,62 +6,59 @@ const Leaderboard = ({ users }) => {
   return (
     <>
       <hr />
-      <h1 className="text-center font-semibold mt-8 flex justify-center items-center text-2xl ">
-        <MdLeaderboard />
+      <h1 className="text-center font-semibold mt-8 flex justify-center items-center gap-2 text-xl sm:text-2xl">
+        <MdLeaderboard className="text-yellow-500" />
         Leaderboard
       </h1>
-      <div className="overflow-x-auto mt-4 ">
+
+      <div className="mt-4 w-full px-2">
         {users.length === 0 ? (
           <div className="text-center m-10">
             <Loading />
           </div>
         ) : (
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Profile</th>
-                <th>Name</th>
-                <th>Total Points</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user, id) => (
-                <tr key={user._id}>
-                  <td>
-                    <div className="flex items-center gap-3">
-                      <div>{id + 1}</div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <img
-                          src={
-                            user.profilePic
-                              ? `http://localhost:5000${user.profilePic}`
-                              : "https://img.daisyui.com/images/profile/demo/2@94.webp"
-                          }
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td>{user.name}</td>
-                  <th>
-                    <button className="btn btn-ghost lg:text-2xl btn-xs">
-                      {user.totalPoints}
-                    </button>
-                  </th>
+          <div className="overflow-x-auto w-full">
+            <table className="table table-zebra w-full">
+              <thead className="bg-base-200">
+                <tr>
+                  <th className="text-xs sm:text-sm">Rank</th>
+                  <th className="text-xs sm:text-sm">Profile</th>
+                  <th className="text-xs sm:text-sm">Name</th>
+                  <th className="text-xs sm:text-sm">Total Points</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {users.map((user, id) => (
+                  <tr key={user._id}>
+                    <td className="text-xs sm:text-base">{id + 1}</td>
+                    <td>
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-10 h-10 sm:w-12 sm:h-12">
+                          <img
+                            src={
+                              user.profilePic
+                                ? `https://leaderboard-3w.onrender.com${user.profilePic}`
+                                : "https://img.daisyui.com/images/profile/demo/2@94.webp"
+                            }
+                            alt="profile"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td className="text-xs sm:text-base">{user.name}</td>
+                    <td>
+                      <button className="btn btn-ghost text-xs sm:text-base">
+                        {user.totalPoints}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
-
       <hr />
     </>
   );

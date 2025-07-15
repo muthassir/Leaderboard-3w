@@ -15,7 +15,7 @@ const History = ({ userId }) => {
   if (!userId) return null;
 
   return (
-    <ul className="list bg-base-100 rounded-box shadow-md w-full max-w-md h-screen  overflow-scroll ">
+    <ul className="list bg-base-100 rounded-box shadow-md w-full max-w-md  overflow-scroll h-56 ">
       <li className="p-4 pb-2 text-2xl opacity-60 tracking-wide flex item-center justify-center">Claim History  <MdHistory size={30}/></li>
       {history.length === 0 && <li className='text-center m-10'>No history</li>}
       {history.map((entry, index) => (
@@ -28,7 +28,7 @@ const History = ({ userId }) => {
               className="size-10 rounded-box"
               src={
                 entry.profilePic
-                  ? `http://localhost:5000${entry.profilePic}`
+                  ? `https://leaderboard-3w.onrender.com${entry.profilePic}`
                   : "https://img.daisyui.com/images/profile/demo/2@94.webp"
               }
               alt="Profile"

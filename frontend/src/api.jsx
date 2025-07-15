@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API = 'http://localhost:5000/api';
+// const API = 'http://localhost:5000/api';
+const API =  'https://leaderboard-3w.onrender.com/api'
 
 export const fetchUsers = () => axios.get(`${API}/users`);
 export const claimPoints = (userId) => axios.post(`${API}/claim/${userId}`);

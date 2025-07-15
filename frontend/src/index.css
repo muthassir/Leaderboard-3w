@@ -5,6 +5,7 @@ body{
   background-image: url('./assets/1752555674125.jpg');
   width: 100vW;
   background-size: cover;
+  background-repeat: repeat;
   margin: 0;
   padding: 0;
 }

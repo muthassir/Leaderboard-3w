@@ -15,11 +15,11 @@ const TopThree = ({ users }) => {
   const imgList = [Gold, Silver, Bronze]
 
   return (
-    <div className="flex flex-wrap justify-center items-start gap-8 my-6 px-4">
+    <div className="flex flex-wrap justify-center lg:flex-row  flex-col items-center gap-8 my-6 px-4 ">
       {topThree.map((user, index) => (
         <div
           key={user._id}
-          className={`card w-60 md:w-52 shadow-lg border border-base-300 text-center bg-base-100`}
+          className={`card w-60 md:w-52 shadow-lg border border-base-300 text-center bg-base-100 `}
         >
           <div className="card-body items-center p-4 relative">
             {/* Trophy animation for rank 1 */}
@@ -31,7 +31,7 @@ const TopThree = ({ users }) => {
 
             {/* Medal icon */}
              <div>
-               <img src={imgList[index]} alt="img" />
+               <img src={imgList[index]} alt="img"  className="h-24"/>
              </div>
             {/* Avatar */}
             <div className="avatar my-2">
@@ -39,10 +39,11 @@ const TopThree = ({ users }) => {
                 <img
                   src={
                     user.profilePic
-                      ? `http://localhost:5000${user.profilePic}`
+                      ? `https://leaderboard-3w.onrender.com${user.profilePic}`
                       : "https://img.daisyui.com/images/profile/demo/2@94.webp"
                   }
                   alt={user.name}
+                  className='16'
                 />
               </div>
             </div>

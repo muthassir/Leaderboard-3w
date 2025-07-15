@@ -66,22 +66,25 @@ const App = () => {
     if (!selectedUser) return;
     const res = await claimPoints(selectedUser);
     await loadUsers();
-    return res.data.points; // assuming backend returns { points: N }
+    return res.data.points; 
   };
 
   return (
     <div className="flex  items-start justify-center w-screen">
-      <div className="tabs tabs-border flex flex-wrap p-6  justify-center">
+      <div className="tabs tabs-border flex flex-wrap p-6  justify-center ">
         {/* Leaderboard Tab */}
         <input
           type="radio"
           name="my_tabs_2"
           className="tab lg:text-2xl"
           aria-label="Leaderboard"
+          defaultChecked
         />
-        <div className="tab-content border-base-300 bg-base-100 p-10 ">
-          <TopThree users={users} />
-          <Leaderboard users={users} />
+        <div className="tab-content border-base-300 bg-base-100 p-10 rounded-2xl ">
+         <div >
+         <TopThree users={users} />
+         <Leaderboard users={users} />
+         </div>
         </div>
 
         {/* Add User Tab */}
@@ -90,9 +93,8 @@ const App = () => {
           name="my_tabs_2"
           className="tab lg:text-2xl"
           aria-label="Add"
-          defaultChecked
         />
-        <div className="tab-content border-base-300 bg-base-100 p-10 ">
+        <div className="tab-content border-base-300 bg-base-100 p-10 rounded-2xl">
           <Adduser
             name={name}
             setName={setName}
@@ -111,8 +113,8 @@ const App = () => {
           className="tab lg:text-2xl"
           aria-label="Claim"
         />
-        <div className="tab-content border-base-300 bg-base-100 p-10">
-        <div className="h-screen flex  flex-col">
+        <div className="tab-content border-base-300 bg-base-100 p-10 rounded-2xl ">
+        <div className=" flex  flex-col h-screen">
         <Userselect
             users={users}
             selectedUser={selectedUser}
@@ -130,8 +132,11 @@ const App = () => {
           className="tab lg:text-2xl"
           aria-label="History"
         />
-        <div className="tab-content border-base-300 bg-base-100 p-10 ">
+        <div className="tab-content border-base-300 bg-base-100 p-10 rounded-2xl">
+          <div className="h-screen ">
           <History userId={selectedUser} />
+
+          </div>
         </div>
       </div>
     </div>
