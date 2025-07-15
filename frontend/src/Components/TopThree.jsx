@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMedal, FaTrophy } from 'react-icons/fa';
+import { FaTrophy } from 'react-icons/fa';
 import Gold from '../assets/InShot_20250715_083610165.png'
 import Silver from '../assets/InShot_20250715_084003865.png'
 import Bronze from '../assets/InShot_20250715_084028545.png'

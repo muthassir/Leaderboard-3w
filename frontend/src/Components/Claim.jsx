@@ -6,10 +6,10 @@ const Claim = ({ onClaim, disabled }) => {
   const [points, setPoints] = useState(null);
 
   const handleClaimClick = async () => {
-    const earned = await onClaim(); // should return the number of points earned
+    const earned = await onClaim(); 
     if (earned) {
       setPoints(earned);
-      setTimeout(() => setPoints(null), 1500); // hide after 1.5s
+      setTimeout(() => setPoints(null), 1500); 
     }
   };
 

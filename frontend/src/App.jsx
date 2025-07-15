@@ -30,13 +30,14 @@ const App = () => {
     localStorage.setItem("selectedUser", selectedUser);
   }, [selectedUser]);
 
+  // add user
   const handleAddUser = async (e) => {
     e.preventDefault();
     if (!name || !file) {
       alert("Both name and image are required.");
       return;
     }
-
+    
     const formData = new FormData();
     formData.append("name", name);
     formData.append("profilePic", file);
@@ -59,6 +60,8 @@ const App = () => {
     }
   };
 
+
+  // claim points
   const handleClaim = async () => {
     if (!selectedUser) return;
     const res = await claimPoints(selectedUser);

@@ -1,6 +1,7 @@
 // controllers/userController.js
 const User = require('../models/User.js');
 
+// get user
 const getUsers = async (req, res) => {
   try {
     const users = await User.find().sort({ totalPoints: -1 });
@@ -10,6 +11,7 @@ const getUsers = async (req, res) => {
   }
 };
 
+// add user
 const addUser = async (req, res) => {
   try {
     const { name } = req.body;
