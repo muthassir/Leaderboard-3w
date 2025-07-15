@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body{
+  background-image: url('./assets/1752555674125.jpg');
+  width: 100vW;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+button {
+  @apply cursor-pointer px-4 py-2 bg-gradient-to-r from-yellow-500 to-purple-500 text-white font-bold rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md;
+}
+
+button:hover {
+  @apply shadow-xl brightness-110;
+}
+
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+.float-up {
+  animation: floatUp 1s ease-out;
+}
